@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      label{
+        display: block;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="" style="float:right">
+      <a href="/logout">Logout</a>
+      <a href="/travels">Home</a>
+    </div>
+
+    <h2>Add a Trip</h2>
+    {% for message in messages %}
+    	<p>{{message}}</p>
+    {% endfor %}
+
+    <form class="" action="/addcheck" method="post">
+      {% csrf_token %}
+      <label for="destination">Destination<input type="text" name="destination" value=""></label>
+      <label for="plan">Description<input type="text" name="plan" value=""></label>
+      <label for="start_date">Trvel Date From:<input type="date" name="start_date" value=""></label>
+      <label for="end_date">Trvel Date To:<input type="date" name="end_date" value=""></label>
+      <input type="submit" name="submit" value="Add">
+    </form>
+  </body>
+</html>
